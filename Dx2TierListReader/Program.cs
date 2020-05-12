@@ -72,7 +72,7 @@ namespace Dx2TierListReader
 
         static string SurroundWithQuotes(string text)
         {
-            return "\"" + text + "\"";
+            return "\"" + text.Replace("\"", "") + "\"";
         }
 
         static string CreateArchetypeFrom(string innerText)
