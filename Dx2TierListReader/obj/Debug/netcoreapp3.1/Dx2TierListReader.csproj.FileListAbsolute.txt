@@ -1,0 +1,16 @@
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\Dx2TierListReader.exe
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.csprojAssemblyReference.cache
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.AssemblyInfoInputs.cache
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.AssemblyInfo.cs
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\Dx2TierListReader.deps.json
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\Dx2TierListReader.runtimeconfig.json
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\Dx2TierListReader.runtimeconfig.dev.json
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\Dx2TierListReader.dll
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\Dx2TierListReader.pdb
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.csproj.CoreCompileInputs.cache
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.csproj.CopyComplete
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.dll
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.pdb
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.genruntimeconfig.cache
