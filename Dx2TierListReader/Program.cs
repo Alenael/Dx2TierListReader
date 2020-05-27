@@ -10,17 +10,55 @@ namespace Dx2TierListReader
     {
         static void Main(string[] args)
         {
+            if (File.Exists("TierData.csv"))
+                File.Delete("TierData.csv");
+
             HtmlWeb web = new HtmlWeb();
-            var doc = web.Load("https://dx2wiki.com/index.php/Tier_List");
+            HtmlDocument doc = null;
+            bool repeat = true;
+            int count = 0;
 
-            var fiveStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[1]/tbody/tr"));
-            var fourStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[2]/tbody/tr"));
+            while (repeat)
+            {
+                try
+                {
+                    Console.WriteLine("Attempting to download site's HTML..");
+                    doc = web.Load("https://dx2wiki.com/index.php/Tier_List");
+                    repeat = false;
+                }
+                catch (Exception e)
+                {
+                    count++;
+                    if (count >= 5)
+                    {
+                        repeat = false;
+                        Console.WriteLine("I give up. Can't download site's HTML..");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Could not download site. Sleeping for 10 minutes..");
+                        System.Threading.Thread.Sleep(600000);
+                    }
+                }
+            }
 
-            var allDemons = new List<DemonInfo>();
-            allDemons.AddRange(fiveStarDemons);
-            allDemons.AddRange(fourStarDemons);
+            if (doc != null)
+            {
+                var fiveStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[1]/tbody/tr"));
+                var fourStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[2]/tbody/tr"));
 
-            CreateCSV(allDemons);
+                var allDemons = new List<DemonInfo>();
+                allDemons.AddRange(fiveStarDemons);
+                allDemons.AddRange(fourStarDemons);
+
+                CreateCSV(allDemons);
+
+                if (File.Exists("TierData.csv"))
+                {
+                    File.Copy(@"TierData.csv", @"C:\Users\darks\Documents\GitHub\Dx2DB\csv\TierData.csv", true);
+                    Console.WriteLine("File was copied.");
+                }
+            }
         }
 
         static void CreateCSV(List<DemonInfo> demons)
@@ -93,6 +131,9 @@ namespace Dx2TierListReader
 
             if (innerText.Contains("ArchPurple"))
                 myArcheType += "P";
+
+            if (innerText.Contains("Any"))
+                myArcheType = "Any";
 
             return myArcheType;
         }
