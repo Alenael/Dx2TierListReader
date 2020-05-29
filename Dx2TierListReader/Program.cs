@@ -36,7 +36,7 @@ namespace Dx2TierListReader
                     }
                     else
                     {
-                        Console.WriteLine("Could not download site. Sleeping for 10 minutes..");
+                        Console.WriteLine("Could not download site. Sleeping for 2 minutes..");
                         System.Threading.Thread.Sleep(600000);
                     }
                 }
@@ -91,7 +91,7 @@ namespace Dx2TierListReader
                 //Craete Demon
                 var demonInfo = new DemonInfo();
                 
-                demonInfo.Name = SurroundWithQuotes(demonCount[i].ChildNodes[1].InnerText.Replace("\n", "").Trim());
+                demonInfo.Name = SurroundWithQuotes(demonCount[i].ChildNodes[1].InnerText.Replace("\n", "").Trim().Replace("Error creating thumbnail: Unable to save thumbnail to destination", ""));
                 demonInfo.BestArchetypePvE = CreateArchetypeFrom(demonCount[i].ChildNodes[3].InnerHtml);
                 demonInfo.BestArchetypePvP = CreateArchetypeFrom(demonCount[i].ChildNodes[5].InnerHtml);
                 demonInfo.PvEScore = Convert.ToDouble(demonCount[i].ChildNodes[7].InnerText);
