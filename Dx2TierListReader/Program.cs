@@ -93,7 +93,7 @@ namespace Dx2TierListReader
                 //Craete Demon
                 var demonInfo = new DemonInfo();
                 
-                demonInfo.Name = SurroundWithQuotes(demonCount[i].ChildNodes[1].InnerText.Replace("\n", "").Trim().Replace("Error creating thumbnail: Unable to save thumbnail to destination", ""));
+                demonInfo.Name = SurroundWithQuotes(demonCount[i].ChildNodes[1].InnerText.Replace("\n", "").Trim().Replace("Error creating thumbnail: Unable to save thumbnail to destination", "").Replace("50px", "").Trim().Replace("_", " "));
                 demonInfo.BestArchetypePvE = CreateArchetypeFrom(demonCount[i].ChildNodes[3].InnerHtml);
                 demonInfo.BestArchetypePvP = CreateArchetypeFrom(demonCount[i].ChildNodes[5].InnerHtml);
                 demonInfo.PvEScore = Convert.ToDouble(demonCount[i].ChildNodes[7].InnerText);
