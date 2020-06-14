@@ -1,6 +1,7 @@
 ﻿using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 
@@ -57,6 +58,7 @@ namespace Dx2TierListReader
                 {
                     File.Copy(@"TierData.csv", @"C:\Users\darks\Documents\GitHub\Dx2DB\csv\TierData.csv", true);
                     Console.WriteLine("File was copied.");
+                    CommitTierInfo();
                 }
             }
         }
@@ -136,6 +138,11 @@ namespace Dx2TierListReader
                 myArcheType = "Any";
 
             return myArcheType;
+        }
+
+        static public void CommitTierInfo()
+        {
+            Process.Start("UploadTierInfo.bat");
         }
     }
 
