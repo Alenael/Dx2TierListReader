@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using System.Web;
 
 namespace Dx2TierListReader
 {
@@ -99,8 +100,8 @@ namespace Dx2TierListReader
                 demonInfo.PvEScore = Convert.ToDouble(demonCount[i].ChildNodes[7].InnerText);
                 demonInfo.PvPOffenseScore = Convert.ToDouble(demonCount[i].ChildNodes[9].InnerText);
                 demonInfo.PvPDefScore = Convert.ToDouble(demonCount[i].ChildNodes[11].InnerText);
-                demonInfo.Pros = SurroundWithQuotes(demonCount[i + 1].InnerText.Replace("Pros", "").Trim());
-                demonInfo.Cons = SurroundWithQuotes(demonCount[i + 2].InnerText.Replace("Cons", "").Trim());
+                demonInfo.Pros = SurroundWithQuotes(HttpUtility.HtmlDecode(demonCount[i + 1].InnerText.Replace("Pros", "").Trim()));
+                demonInfo.Cons = SurroundWithQuotes(HttpUtility.HtmlDecode(demonCount[i + 2].InnerText.Replace("Cons", "").Trim()));
 
                 //Add Demon
                 if (demonInfo.Name != "")
