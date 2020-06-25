@@ -14,3 +14,4 @@ C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3
 C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.dll
 C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.pdb
 C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\obj\Debug\netcoreapp3.1\Dx2TierListReader.genruntimeconfig.cache
+C:\Users\darks\Desktop\Dx2TierListReader\Dx2TierListReader\bin\Debug\netcoreapp3.1\UploadTierInfo.bat

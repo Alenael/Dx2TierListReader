@@ -87,7 +87,7 @@ namespace Dx2TierListReader
 
         static List<DemonInfo> LoopThroughTable(HtmlNodeCollection demonCount)
         {
-            var demonList = new List<DemonInfo>();            
+            var demonList = new List<DemonInfo>();
 
             for (var i = 2; i < demonCount.Count; i += 4)
             {
