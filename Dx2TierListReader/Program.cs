@@ -68,7 +68,7 @@ namespace Dx2TierListReader
         {
             using (StreamWriter outputFile = new StreamWriter("TierData.csv"))
             {
-                outputFile.WriteLine("Name,BestArchetypePvE,BestArchetypePvP,PvEScore,PvPOffenseScore,PvPDefScore,Pros,Cons");
+                outputFile.WriteLine("Name,BestArchetypePvE,BestArchetypePvP,PvEScore,PvPOffenseScore,PvPDefScore,Pros,Cons,Notes");
 
                 foreach (var demon in demons)
                 {
@@ -80,7 +80,8 @@ namespace Dx2TierListReader
                         demon.PvPOffenseScore + "," +
                         demon.PvPDefScore + "," +
                         demon.Pros + "," +
-                        demon.Cons);
+                        demon.Cons + "," +
+                        demon.Notes);
                 }
             }
         }
