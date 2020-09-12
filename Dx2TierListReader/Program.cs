@@ -46,8 +46,8 @@ namespace Dx2TierListReader
 
             if (doc != null)
             {
-                var fiveStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[1]/tbody/tr"));
-                var fourStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[2]/tbody/tr"));
+                var fiveStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[4]/tbody/tr"));
+                var fourStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[8]/tbody/tr"));
 
                 var allDemons = new List<DemonInfo>();
                 allDemons.AddRange(fiveStarDemons);
@@ -89,11 +89,11 @@ namespace Dx2TierListReader
         {
             var demonList = new List<DemonInfo>();
 
-            for (var i = 2; i < demonCount.Count; i += 4)
+            for (var i = 2; i < demonCount.Count; i += 5)
             {
                 //Craete Demon
                 var demonInfo = new DemonInfo();
-                
+
                 demonInfo.Name = SurroundWithQuotes(demonCount[i].ChildNodes[1].InnerText.Replace("\n", "").Trim().Replace("Error creating thumbnail: Unable to save thumbnail to destination", "").Replace("50px", "").Trim().Replace("_", " "));
                 demonInfo.BestArchetypePvE = CreateArchetypeFrom(demonCount[i].ChildNodes[3].InnerHtml);
                 demonInfo.BestArchetypePvP = CreateArchetypeFrom(demonCount[i].ChildNodes[5].InnerHtml);
@@ -102,6 +102,7 @@ namespace Dx2TierListReader
                 demonInfo.PvPDefScore = Convert.ToDouble(demonCount[i].ChildNodes[11].InnerText);
                 demonInfo.Pros = SurroundWithQuotes(HttpUtility.HtmlDecode(demonCount[i + 1].InnerText.Replace("Pros", "").Trim()));
                 demonInfo.Cons = SurroundWithQuotes(HttpUtility.HtmlDecode(demonCount[i + 2].InnerText.Replace("Cons", "").Trim()));
+                demonInfo.Notes = SurroundWithQuotes(HttpUtility.HtmlDecode(demonCount[i + 3].InnerText.Replace("Notes", "").Trim()));
 
                 //Add Demon
                 if (demonInfo.Name != "")
@@ -157,6 +158,7 @@ namespace Dx2TierListReader
         public double PvPDefScore = 0;
         public string Pros = "";
         public string Cons = "";
+        public string Notes = "";
     }
 }
 
