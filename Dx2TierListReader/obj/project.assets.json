@@ -3378,11 +3378,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darks\\Desktop\\Dx2TierListReader\\Dx2TierListReader\\Dx2TierListReader.csproj",
+      "projectUniqueName": "C:\\Users\\darks\\Documents\\GitHub\\Dx2TierListReader\\Dx2TierListReader\\Dx2TierListReader.csproj",
       "projectName": "Dx2TierListReader",
-      "projectPath": "C:\\Users\\darks\\Desktop\\Dx2TierListReader\\Dx2TierListReader\\Dx2TierListReader.csproj",
+      "projectPath": "C:\\Users\\darks\\Documents\\GitHub\\Dx2TierListReader\\Dx2TierListReader\\Dx2TierListReader.csproj",
       "packagesPath": "C:\\Users\\darks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darks\\Desktop\\Dx2TierListReader\\Dx2TierListReader\\obj\\",
+      "outputPath": "C:\\Users\\darks\\Documents\\GitHub\\Dx2TierListReader\\Dx2TierListReader\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\darks\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3429,7 +3429,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

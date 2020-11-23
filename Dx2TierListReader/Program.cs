@@ -46,8 +46,8 @@ namespace Dx2TierListReader
 
             if (doc != null)
             {
-                var fiveStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[4]/tbody/tr"));
-                var fourStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[8]/tbody/tr"));
+                var fiveStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[contains(@class, 'tierlist')][1]/tbody/tr"));
+                var fourStarDemons = LoopThroughTable(doc.DocumentNode.SelectNodes("//table[contains(@class, 'tierlist')][2]/tbody/tr"));
 
                 var allDemons = new List<DemonInfo>();
                 allDemons.AddRange(fiveStarDemons);
@@ -68,7 +68,7 @@ namespace Dx2TierListReader
         {
             using (StreamWriter outputFile = new StreamWriter("TierData.csv"))
             {
-                outputFile.WriteLine("Name,BestArchetypePvE,BestArchetypePvP,PvEScore,PvPOffenseScore,PvPDefScore,Pros,Cons,Notes");
+                outputFile.WriteLine("Name,BestArchetypePvE,BestArchetypePvP,PvEScore,PvPOffenseScore,PvPDefScore,DemoPrelimScore,DemoBossScore,Pros,Cons,Notes");
 
                 foreach (var demon in demons)
                 {
@@ -79,6 +79,8 @@ namespace Dx2TierListReader
                         demon.PvEScore + "," +
                         demon.PvPOffenseScore + "," +
                         demon.PvPDefScore + "," +
+                        demon.DemoPrelimScore + "," +
+                        demon.DemoBossScore + "," +
                         demon.Pros + "," +
                         demon.Cons + "," +
                         demon.Notes);
@@ -98,9 +100,11 @@ namespace Dx2TierListReader
                 demonInfo.Name = SurroundWithQuotes(demonCount[i].ChildNodes[1].InnerText.Replace("\n", "").Trim().Replace("Error creating thumbnail: Unable to save thumbnail to destination", "").Replace("50px", "").Trim().Replace("_", " "));
                 demonInfo.BestArchetypePvE = CreateArchetypeFrom(demonCount[i].ChildNodes[3].InnerHtml);
                 demonInfo.BestArchetypePvP = CreateArchetypeFrom(demonCount[i].ChildNodes[5].InnerHtml);
-                demonInfo.PvEScore = Convert.ToDouble(demonCount[i].ChildNodes[7].InnerText);
-                demonInfo.PvPOffenseScore = Convert.ToDouble(demonCount[i].ChildNodes[9].InnerText);
-                demonInfo.PvPDefScore = Convert.ToDouble(demonCount[i].ChildNodes[11].InnerText);
+                demonInfo.PvEScore = Convert.ToDouble(demonCount[i].ChildNodes[7].InnerText.Replace("-", "0"));
+                demonInfo.PvPOffenseScore = Convert.ToDouble(demonCount[i].ChildNodes[9].InnerText.Replace("-", "0"));
+                demonInfo.PvPDefScore = Convert.ToDouble(demonCount[i].ChildNodes[11].InnerText.Replace("-", "0"));
+                demonInfo.DemoPrelimScore = Convert.ToDouble(demonCount[i].ChildNodes[13].InnerText.Replace("-", "0"));
+                demonInfo.DemoBossScore = Convert.ToDouble(demonCount[i].ChildNodes[15].InnerText.Replace("-", "0"));
                 demonInfo.Pros = SurroundWithQuotes(HttpUtility.HtmlDecode(demonCount[i + 1].InnerText.Replace("Pros", "").Trim()));
                 demonInfo.Cons = SurroundWithQuotes(HttpUtility.HtmlDecode(demonCount[i + 2].InnerText.Replace("Cons", "").Trim()));
                 demonInfo.Notes = SurroundWithQuotes(HttpUtility.HtmlDecode(demonCount[i + 3].InnerText.Replace("Notes", "").Trim()));
@@ -157,6 +161,8 @@ namespace Dx2TierListReader
         public double PvEScore = 0;
         public double PvPOffenseScore = 0;
         public double PvPDefScore = 0;
+        public double DemoPrelimScore = 0;
+        public double DemoBossScore = 0;
         public string Pros = "";
         public string Cons = "";
         public string Notes = "";

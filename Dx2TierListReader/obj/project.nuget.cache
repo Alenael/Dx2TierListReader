@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sKo0rm6ga5c23X5i7cfCbr4EhxMkzwuR4b367lGY4abVrKcFcAUdPv4jauVZkJULMvz2ZucDR1P3wW85/HCxtQ==",
+  "dgSpecHash": "2CJK32E6t+6vlfH5w1D79P+LovCq8P8lNx17Ulg9/rBzrRkMdQ+s++rMJAN+zRHNd/lEdhEhHfQIhu3j1ATggQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\darks\\Desktop\\Dx2TierListReader\\Dx2TierListReader\\Dx2TierListReader.csproj",
+  "projectFilePath": "C:\\Users\\darks\\Documents\\GitHub\\Dx2TierListReader\\Dx2TierListReader\\Dx2TierListReader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\darks\\.nuget\\packages\\htmlagilitypack\\1.11.23\\htmlagilitypack.1.11.23.nupkg.sha512",
     "C:\\Users\\darks\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
